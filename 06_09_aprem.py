@@ -13,11 +13,11 @@ while parties :  #cette boucle while c'est pour demander a l'utilisateur est ce 
     if str(go) == "start": # si l'utilasateur ecrit start le jeu va ce lancer 
         nbr_de_partie += 1  # c'est pour rajouter les parties 
         code = random.randint(minima,maxima) 
-        print(code) 
+        print(code) # dommage de donner le nombre direct
         
         
-        aps = True
-        while (aps): 
+        aps = True # aps ?
+        while (aps):  # parenthèses pas nécessaires
             score+=1    # les tentives
             c = int(input('entrer un code entre ' + str(minima) + ' et ' + str(maxima) + ' : '))
             if c == code:
@@ -31,7 +31,7 @@ while parties :  #cette boucle while c'est pour demander a l'utilisateur est ce 
                     print("le code est plus grand")
                     print("vous pouvez rejouer")
                     
-        
+        # oof, peut-être lui permettre de réécrire sa réponse ?
     else :#si l'utilisateur n'ecrit rien ou n'import quoi, dans ce cas le jeu s'arret 
         print("à bientot")
         break
@@ -45,9 +45,9 @@ with open ("Nombre de parties", "w") as f:   #ouvrir un fichier et ecrire le nbr
         f.close()
 
 
-
-
-
+# attention : tel quel, on aura toujours la dernière partie uniquement
+# car on écrase par les nouveaux scores
+# sans lire au préalable !
     
 with open ("Nombre de parties", "r") as f: # lire le fichier f
     contenu = f.read()   
